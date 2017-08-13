@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles = {
-    `article-One : {
+    'article-one' : {
         title: 'Article One | Saravanan Ramasamy',
         heading: 'Article One',
         date: 'Aug 13, 2017 | 17:45',
@@ -21,7 +21,7 @@ var articles = {
                 This is Article One content. I need to write something here. I don't know what to write. Hence I am writing Something. Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.
             </p> `
     },
-    `article-Two : {
+    'article-two' : {
         title: 'Article two | Saravanan Ramasamy',
         heading: 'Article two',
         date: 'Aug 13, 2017 | 18:00',
@@ -29,21 +29,12 @@ var articles = {
             <p>
                 This is Article two content. I need to write something here. I don't know what to write. Hence I am writing Something. Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.
             </p>
-            <p>
-                This is Article two content. I need to write something here. I don't know what to write. Hence I am writing Something. Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.
-            </p>
-            <p>
-                This is Article two content. I need to write something here. I don't know what to write. Hence I am writing Something. Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.
-            </p>
     `},    
-    `article-Three : {
+    'article-three' : {
         title: 'Article Three | Saravanan Ramasamy',
         heading: 'Article Three',
         date: 'Aug 13, 2017 | 18:30',
         content: ` 
-            <p>
-                This is Article Three content. I need to write something here. I don't know what to write. Hence I am writing Something. Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.
-            </p>
             <p>
                 This is Article Three content. I need to write something here. I don't know what to write. Hence I am writing Something. Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.
             </p>
