@@ -5,12 +5,12 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
-var articleone = {
-    title: 'Article One | Saravanan Ramasamy',
-    heading: 'Article One',
-    date: 'Aug 13, 2017 | 17:45',
-    content: ` 
+var articles = {
+    `article-One : {
+        title: 'Article One | Saravanan Ramasamy',
+        heading: 'Article One',
+        date: 'Aug 13, 2017 | 17:45',
+        content: ` 
             <p>
                 This is Article One content. I need to write something here. I don't know what to write. Hence I am writing Something. Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.
             </p>
@@ -20,15 +20,46 @@ var articleone = {
             <p>
                 This is Article One content. I need to write something here. I don't know what to write. Hence I am writing Something. Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.
             </p> `
+    },
+    `article-Two : {
+        title: 'Article two | Saravanan Ramasamy',
+        heading: 'Article two',
+        date: 'Aug 13, 2017 | 18:00',
+        content: ` 
+            <p>
+                This is Article two content. I need to write something here. I don't know what to write. Hence I am writing Something. Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.
+            </p>
+            <p>
+                This is Article two content. I need to write something here. I don't know what to write. Hence I am writing Something. Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.
+            </p>
+            <p>
+                This is Article two content. I need to write something here. I don't know what to write. Hence I am writing Something. Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.
+            </p>
+    `},    
+    `article-Three : {
+        title: 'Article Three | Saravanan Ramasamy',
+        heading: 'Article Three',
+        date: 'Aug 13, 2017 | 18:30',
+        content: ` 
+            <p>
+                This is Article Three content. I need to write something here. I don't know what to write. Hence I am writing Something. Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.
+            </p>
+            <p>
+                This is Article Three content. I need to write something here. I don't know what to write. Hence I am writing Something. Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.
+            </p>
+            <p>
+                This is Article Three content. I need to write something here. I don't know what to write. Hence I am writing Something. Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.Something is nothing.
+            </p>
+    `}
 };
 
-function createtemplate (data) {
+function createTemplate (data) {
     var title = data.title;
     var heading = data.heading;
     var date = data.date;
     var content = data.content;
 
-    var htmltemplate = `
+    var htmlTemplate = `
         <html>
         <head>
             <title>
@@ -56,7 +87,7 @@ function createtemplate (data) {
         </body>
     </html>
     `;
-    return htmltemplate;
+    return htmlTemplate;
 }
 
 
@@ -64,33 +95,26 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
-  res.send(createtemplate(articleone));
+app.get('/:articleName', function (req, res) {
+  var articleName = req.param.articleName;
+  res.send(createTemplate(articles[articleName]));
 });
-
-app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
-
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
+
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/ui/go-the-extra-mile-its-never-crowded-quote-1.jpg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'go-the-extra-mile-its-never-crowded-quote-1.jpg'));
-});
-
 app.get('/ui/xtramile.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'xtramile.jpg'));
+});
+
+app.get('/ui/go-the-extra-mile-its-never-crowded-quote-1.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'go-the-extra-mile-its-never-crowded-quote-1.jpg'));
 });
 
 // Do not change port, otherwise your app won't run on IMAD servers
