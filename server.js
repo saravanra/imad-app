@@ -112,8 +112,8 @@ app.get('/ui/go-the-extra-mile-its-never-crowded-quote-1.jpg', function (req, re
   res.sendFile(path.join(__dirname, 'ui', 'go-the-extra-mile-its-never-crowded-quote-1.jpg'));
 });
 
-app.get('/ui/Saravan.jpg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'Saravan.jpg'));
+app.get('/ui/saravan.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'saravan.jpg'));
 });
 
 // Do not change port, otherwise your app won't run on IMAD servers
