@@ -3,7 +3,7 @@ console.log('Loaded!');
 var element = document.getElementById("main-text");
 element.innerHTML = "New value from .js file";
 
-var img = document.getElementById("xtra");
+var img = document.getElementById("Saravan");
 var marginLeft = 0;
 function moveRight () {
     marginLeft = marginLeft + 10;
