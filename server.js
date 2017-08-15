@@ -45,6 +45,7 @@ var articles = {
 };
 
 function createTemplate (data) {
+    var title = 'Saravan\'s IMAD | Saravanan Ramasamy'
     var title = data.title;
     var heading = data.heading;
     var date = data.date;
