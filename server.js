@@ -45,7 +45,6 @@ var articles = {
 };
 
 function createTemplate (data) {
-    var title = 'Saravan\'s IMAD | Saravanan Ramasamy'
     var title = data.title;
     var heading = data.heading;
     var date = data.date;
@@ -57,6 +56,7 @@ function createTemplate (data) {
             <title>
                 ${title}
             </title>
+            <link rel="shortcut icon" href="/favicon.ico" />
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link href="/ui/style.css" rel="stylesheet" />
         </head>
