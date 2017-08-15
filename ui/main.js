@@ -1,15 +1,12 @@
-console.log('Loaded!');
-      
-var element = document.getElementById("main-text");
-element.innerHTML = "New value from .js file";
-
-var img = document.getElementById("Saravan");
-var marginLeft = 0;
-function moveRight () {
-    marginLeft = marginLeft + 10;
-    img.style.marginLeft = marginLeft + "px";
-}
-img.onclick = function () {    
-    var interval = setInterval(moveRight, 100)
-//    img.style.marginLeft = "100px";
+var button = document.getElementById('counter');
+button.onclick = function() {
+    //request the counter end point
+    
+    //capture the response & store it in a variable.
+    
+    //render the variable to the correct span
+    counter = counter + 1
+    var span = document.getElementById('count');
+    span.innerHTML = counter
+    
 };
